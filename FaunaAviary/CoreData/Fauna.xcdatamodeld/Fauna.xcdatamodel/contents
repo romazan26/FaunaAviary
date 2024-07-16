@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Animal" representedClassName="Animal" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="aviary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Aviary" inverseName="animals" inverseEntity="Aviary"/>
+    </entity>
+    <entity name="Aviary" representedClassName="Aviary" syncable="YES" codeGenerationType="class">
+        <attribute name="nameAviary" optional="YES" attributeType="String"/>
+        <attribute name="spentOnAnimals" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="animals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Animal" inverseName="aviary" inverseEntity="Animal"/>
+    </entity>
+    <entity name="Zoo" representedClassName="Zoo" syncable="YES" codeGenerationType="class">
+        <attribute name="titleZoo" optional="YES" attributeType="String"/>
+    </entity>
+</model>

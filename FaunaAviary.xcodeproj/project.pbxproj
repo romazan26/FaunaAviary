@@ -14,6 +14,16 @@
 		30475A702C4680EB008B8870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30475A6F2C4680EB008B8870 /* Assets.xcassets */; };
 		30475A732C4680EB008B8870 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 30475A722C4680EB008B8870 /* Base */; };
 		30475A7C2C46819D008B8870 /* CreateTitleZooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30475A7B2C46819D008B8870 /* CreateTitleZooView.swift */; };
+		30475A7F2C468371008B8870 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30475A7E2C468371008B8870 /* CustomTextFieldView.swift */; };
+		30475A822C4690AD008B8870 /* ZooViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30475A812C4690AD008B8870 /* ZooViewModel.swift */; };
+		30475A842C4691A7008B8870 /* OrangebuttonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30475A832C4691A7008B8870 /* OrangebuttonView.swift */; };
+		30475A862C46935F008B8870 /* ZooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30475A852C46935F008B8870 /* ZooView.swift */; };
+		30475A892C46AEB8008B8870 /* AviaryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30475A882C46AEB8008B8870 /* AviaryCellView.swift */; };
+		30475A902C46DE48008B8870 /* Fauna.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30475A8E2C46DE48008B8870 /* Fauna.xcdatamodeld */; };
+		30475A922C46DE9C008B8870 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30475A912C46DE9C008B8870 /* CoreDataManager.swift */; };
+		30475A942C46EACF008B8870 /* AviaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30475A932C46EACF008B8870 /* AviaryViewModel.swift */; };
+		30475A962C46ED70008B8870 /* NewAviaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30475A952C46ED70008B8870 /* NewAviaryView.swift */; };
+		30475A982C46F024008B8870 /* TitleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30475A972C46F024008B8870 /* TitleTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,16 @@
 		30475A722C4680EB008B8870 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30475A742C4680EB008B8870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30475A7B2C46819D008B8870 /* CreateTitleZooView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTitleZooView.swift; sourceTree = "<group>"; };
+		30475A7E2C468371008B8870 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		30475A812C4690AD008B8870 /* ZooViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooViewModel.swift; sourceTree = "<group>"; };
+		30475A832C4691A7008B8870 /* OrangebuttonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangebuttonView.swift; sourceTree = "<group>"; };
+		30475A852C46935F008B8870 /* ZooView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooView.swift; sourceTree = "<group>"; };
+		30475A882C46AEB8008B8870 /* AviaryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviaryCellView.swift; sourceTree = "<group>"; };
+		30475A8F2C46DE48008B8870 /* Fauna.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fauna.xcdatamodel; sourceTree = "<group>"; };
+		30475A912C46DE9C008B8870 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		30475A932C46EACF008B8870 /* AviaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviaryViewModel.swift; sourceTree = "<group>"; };
+		30475A952C46ED70008B8870 /* NewAviaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAviaryView.swift; sourceTree = "<group>"; };
+		30475A972C46F024008B8870 /* TitleTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +78,10 @@
 		30475A652C4680EA008B8870 /* FaunaAviary */ = {
 			isa = PBXGroup;
 			children = (
+				30475A8A2C46DDFB008B8870 /* CoreData */,
+				30475A872C46AE9D008B8870 /* Cells */,
+				30475A802C46909D008B8870 /* ViewModel */,
+				30475A7D2C468357008B8870 /* Helpers */,
 				30475A7A2C468117008B8870 /* View */,
 				30475A662C4680EA008B8870 /* AppDelegate.swift */,
 				30475A682C4680EA008B8870 /* SceneDelegate.swift */,
@@ -74,8 +98,46 @@
 			isa = PBXGroup;
 			children = (
 				30475A7B2C46819D008B8870 /* CreateTitleZooView.swift */,
+				30475A852C46935F008B8870 /* ZooView.swift */,
+				30475A952C46ED70008B8870 /* NewAviaryView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		30475A7D2C468357008B8870 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				30475A7E2C468371008B8870 /* CustomTextFieldView.swift */,
+				30475A832C4691A7008B8870 /* OrangebuttonView.swift */,
+				30475A972C46F024008B8870 /* TitleTextFieldView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		30475A802C46909D008B8870 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				30475A812C4690AD008B8870 /* ZooViewModel.swift */,
+				30475A932C46EACF008B8870 /* AviaryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		30475A872C46AE9D008B8870 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				30475A882C46AEB8008B8870 /* AviaryCellView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		30475A8A2C46DDFB008B8870 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				30475A8E2C46DE48008B8870 /* Fauna.xcdatamodeld */,
+				30475A912C46DE9C008B8870 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +211,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30475A942C46EACF008B8870 /* AviaryViewModel.swift in Sources */,
 				30475A7C2C46819D008B8870 /* CreateTitleZooView.swift in Sources */,
 				30475A6B2C4680EA008B8870 /* ViewController.swift in Sources */,
 				30475A672C4680EA008B8870 /* AppDelegate.swift in Sources */,
+				30475A902C46DE48008B8870 /* Fauna.xcdatamodeld in Sources */,
+				30475A862C46935F008B8870 /* ZooView.swift in Sources */,
+				30475A7F2C468371008B8870 /* CustomTextFieldView.swift in Sources */,
+				30475A842C4691A7008B8870 /* OrangebuttonView.swift in Sources */,
+				30475A892C46AEB8008B8870 /* AviaryCellView.swift in Sources */,
+				30475A962C46ED70008B8870 /* NewAviaryView.swift in Sources */,
+				30475A822C4690AD008B8870 /* ZooViewModel.swift in Sources */,
+				30475A982C46F024008B8870 /* TitleTextFieldView.swift in Sources */,
 				30475A692C4680EA008B8870 /* SceneDelegate.swift in Sources */,
+				30475A922C46DE9C008B8870 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +455,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		30475A8E2C46DE48008B8870 /* Fauna.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30475A8F2C46DE48008B8870 /* Fauna.xcdatamodel */,
+			);
+			currentVersion = 30475A8F2C46DE48008B8870 /* Fauna.xcdatamodel */;
+			name = Fauna.xcdatamodeld;
+			path = /Users/roman/Downloads/XcodeProgramm/FaunaAviary/FaunaAviary/CoreData/Fauna.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 30475A5B2C4680EA008B8870 /* Project object */;
 }
