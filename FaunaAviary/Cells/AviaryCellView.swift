@@ -8,30 +8,40 @@
 import SwiftUI
 
 struct AviaryCellView: View {
+    let aviary: Aviary
+    @StateObject var vm: AviaryViewModel
     var body: some View {
         ZStack {
             Color.secon
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Tiger enclosure")
+                    
+                    //MARK: - title aviary
+                    Text(aviary.nameAviary ?? "")
                         .foregroundStyle(.white)
                         .font(.system(size: 16, weight: .heavy))
-                    Text("4 animals")
-                        .foregroundStyle(.grayApp)
-                        .font(.system(size: 16))
+                    //MARK: - count animal
+                    if let animals = aviary.animals?.allObjects as? [Animal]{
+                        Text("\(animals.count) animals")
+                            .foregroundStyle(.grayApp)
+                            .font(.system(size: 16))
+                    }
                 }
                 
                 Spacer()
                 
+                //MARK: - Spent on animals
                 ZStack{
                     Color.main
-                    Text("14.000$")
+                    Text("\(aviary.spentOnAnimals)$")
                         .foregroundStyle(.white)
                         .font(.system(size: 16, weight: .heavy))
                 }
                 .frame(width: 91, height: 32)
                 .cornerRadius(36)
-                Button(action: {}, label: {
+                
+                //MARK: - Delete aviary button
+                Button(action: {vm.deleteAviary(with: aviary.id)}, label: {
                     Image(systemName: "trash")
                         .foregroundStyle(.white)
                 })
@@ -43,5 +53,5 @@ struct AviaryCellView: View {
 }
 
 #Preview {
-    AviaryCellView()
+    AviaryCellView(aviary: Aviary(), vm: AviaryViewModel())
 }

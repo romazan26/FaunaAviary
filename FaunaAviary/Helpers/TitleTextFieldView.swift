@@ -9,18 +9,20 @@ import SwiftUI
 
 struct TitleTextFieldView: View {
     var placeholder = ""
+    var alignment: TextAlignment = .center
+    var stackAlignment: Alignment = .center
     @Binding var text: String
     var body: some View {
-        ZStack(alignment: .center) {
+        ZStack(alignment: stackAlignment) {
             Color.main
             if text.isEmpty {
                 Text(placeholder)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(alignment)
                     .padding()
                     .foregroundStyle(.white.opacity(0.4))
             }
             TextField("", text: $text)
-                .multilineTextAlignment(.center)
+                .multilineTextAlignment(alignment)
                 .padding()
                 .foregroundStyle(.white)
         }

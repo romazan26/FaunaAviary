@@ -11,42 +11,63 @@ struct ZooView: View {
     @StateObject var vm = AviaryViewModel()
     var title = "STAR ZOO LAND"
     var body: some View {
-        ZStack {
-            Color.main.ignoresSafeArea()
-            VStack {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(title)
-                            .foregroundStyle(.white)
-                        .font(.system(size: 24, weight: .heavy))
-                        Text("41.000$")
-                            .foregroundStyle(.grayApp)
-                        .font(.system(size: 24, weight: .heavy))
-                    }
+        NavigationView {
+            ZStack {
+                Color.main.ignoresSafeArea()
+                VStack {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(title)
+                                .foregroundStyle(.white)
+                            .font(.system(size: 24, weight: .heavy))
+                            Text("\(vm.allSpent)$")
+                                .foregroundStyle(.grayApp)
+                            .font(.system(size: 24, weight: .heavy))
+                        }
+                        Spacer()
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
+                            Image(systemName: "gearshape")
+                                .foregroundStyle(.white)
+                        }
+                    }.padding()
                     Spacer()
-                    Image(systemName: "gearshape")
-                        .foregroundStyle(.white)
-                }.padding()
-                Spacer()
-                
-                //MARK: - Aviary list
-                //Text("No enclosures yet").foregroundStyle(.white.opacity(0.6))
-                ScrollView {
-                    AviaryCellView()
+                    
+                    //MARK: - Aviary list
+                    if vm.aviarys.isEmpty{
+                        Text("No enclosures yet").foregroundStyle(.white.opacity(0.6))
+                    }else {
+                        ScrollView {
+                            ForEach(vm.aviarys) { aviary in
+                                NavigationLink {
+                                    AnimalView(vm: vm, aviary: aviary)
+                                } label: {
+                                    AviaryCellView(aviary: aviary, vm: vm)
+                                }
+
+                            }     
+                        }
+                    }
+                    
+                    
+                    Spacer()
+                    
+                    Button(action: {vm.isPresentNewAviary.toggle()}, label: {
+                        OrangebuttonView(text: "New aviary")
+                    })
+                    
                 }
-                
-                Spacer()
-                
-                Button(action: {vm.isPresentNewAviary.toggle()}, label: {
-                    OrangebuttonView(text: "New aviary")
-                })
-                
-            }
-            .padding()
-        }
-        .sheet(isPresented: $vm.isPresentNewAviary, content: {
-            NewAviaryView(vm: vm)
+                .padding()
+            }    
+            .animation(.spring, value: vm.aviarys)
+            .onAppear(perform: {
+                vm.getAllSpent()
+            })
+            .sheet(isPresented: $vm.isPresentNewAviary, content: {
+                NewAviaryView(vm: vm)
         })
+        }
     }
 }
 
