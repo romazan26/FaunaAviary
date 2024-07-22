@@ -61,9 +61,6 @@ struct ZooView: View {
                 .padding()
             }    
             .animation(.spring, value: vm.aviarys)
-            .onAppear(perform: {
-                vm.getAllSpent()
-            })
             .sheet(isPresented: $vm.isPresentNewAviary, content: {
                 NewAviaryView(vm: vm)
         })

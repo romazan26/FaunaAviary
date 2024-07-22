@@ -120,6 +120,7 @@ struct NewAviaryView: View {
                                            alignment: .leading,
                                            stackAlignment: .leading,
                                            text: $vm.simpleSpentOnAnimals)
+                        .keyboardType(.numberPad)
                         Spacer()
                         
                         Image(systemName: "pencil")
@@ -135,7 +136,11 @@ struct NewAviaryView: View {
                 }, label: {
                     OrangebuttonView(text: "Save aviary")
                 })
-            }.padding()
+            }
+            .padding()
+            .onTapGesture {
+                keyboardIsFocused = false
+            }
         }
         .onTapGesture {
             keyboardIsFocused = false

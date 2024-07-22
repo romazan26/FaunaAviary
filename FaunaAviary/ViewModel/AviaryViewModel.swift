@@ -52,9 +52,32 @@ final class AviaryViewModel: ObservableObject{
         getAllSpent()
     }
     
+    //MARK: - UPDATA
+    func updataAviary(with id: ObjectIdentifier){
+        let request = NSFetchRequest<Aviary>(entityName: "Aviary")
+        do{
+            aviarys = try manager.context.fetch(request)
+            
+            let aviary = aviarys.first(where: { $0.id == id })
+            aviary?.nameAviary = simpleTitleAviary
+            aviary?.spentOnAnimals = Int16(simpleSpentOnAnimals) ?? 0
+        }catch let error {
+            print("Dont updata: \(error.localizedDescription)")
+        }
+        save()
+        clearData()
+    }
+    
+    //MARK: - Fill in the data
+    func fillData(aviary: Aviary){
+        simpleTitleAviary = aviary.nameAviary ?? ""
+        simpleSpentOnAnimals = String(aviary.spentOnAnimals)
+    }
+    
     //MARK: - All spent zoo
     func getAllSpent(){
         allSpent = 0
+        aviarys.removeAll()
         getAviary()
         for aviary in aviarys {
             allSpent += aviary.spentOnAnimals
